@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>student Login </title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../static/assets/css/login.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	
+	<div class="container-login100" style="background-image: url('../static/assets/img/bg-01.jpg');">
+		
+			<form name="form" class="login100-form validate-form" method="post" action="{% url 'update_item' stud_item.id %}">
+				{% csrf_token %}
+				<span class="login100-form-title p-b-37">
+					Edit Details
+				</span>
+
+				<div class="wrap-input100 validate-input m-b-20" >
+                    <label>Student Name</label>
+					<input class="input100" type="text" name="name" placeholder="Name" value="{{ stud_item.name }}">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-20" >
+                    <label>Student Reg.No</label>
+					<input class="input100" type="text" name="reg_no" placeholder="Register_No" value="{{ stud_item.reg_no }}">
+					<span class="focus-input100"></span>
+				</div>
+
+                <div class="wrap-input100 validate-input m-b-20" >
+                    <label>Student Course Name</label>
+					<input class="input100" type="text" name="course" placeholder="Course" value="{{ stud_item.course }}">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input m-b-20" >
+                    <label>Student Batch Name</label>
+					<input class="input100" type="text" name="batch" placeholder="Batch" value="{{ stud_item.batch }}">
+					<span class="focus-input100"></span>
+				</div>
+
+                <div class="wrap-input100 validate-input m-b-20" >
+                    <label>Student Image</label>
+					<input class="input100" type="text" name="image" placeholder="Image" value="{{ stud_item.image }}">
+					<span class="focus-input100"></span>
+				</div>
+
+				
+
+				<div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+			</form>	
+	</div>
+
+</body>
+</html>
